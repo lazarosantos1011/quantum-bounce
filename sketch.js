@@ -11,6 +11,8 @@ const barraEspessura = 5;
 let pontosJogador = 0;
 let pontosComputador = 0;
 
+let gameStarted = false; // Variável para controlar o estado do jogo
+
 document.getElementById('start-button').addEventListener('click', function() {
       // Chama a função setup() e esconde o botão
       setup();
@@ -28,17 +30,25 @@ function preload() {
 
 function setup() {
   createCanvas(800, 400);
+  textSize(16); // Define o tamanho do texto
+  textFont('Comic Sans MS');
+  textAlign(CENTER, CENTER); // Alinha o texto ao centro
+  noLoop();
+}
+
+function startGame() {
   bola = new Bola();
   raqueteJogador = new Raquete(true);
   raqueteComputador = new Raquete(false);
   bounceSound.setVolume(0.3);
   scoreSound.setVolume(0.20);
-  textSize(16); // Define o tamanho do texto
-  textFont('Comic Sans MS');
-  textAlign(CENTER, CENTER); // Alinha o texto ao centro
+  gameStarted = true;
+  loop(); // Inicia o draw
 }
 
 function draw() {
+  if(!gameStarted) return;
+      
   let imgAspect = fundoImg.width / fundoImg.height;
   let canvasAspect = width / height;
 
