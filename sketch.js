@@ -11,6 +11,12 @@ const barraEspessura = 5;
 let pontosJogador = 0;
 let pontosComputador = 0;
 
+document.getElementById('start-button').addEventListener('click', function() {
+      // Chama a função setup() e esconde o botão
+      setup();
+      this.style.display = 'none';
+});
+
 function preload() {
   fundoImg = loadImage('./Sprites/fundo1.png');
   bolaImg = loadImage('./Sprites/bola.png');
