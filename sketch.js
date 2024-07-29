@@ -15,7 +15,6 @@ let gameStarted = false; // Variável para controlar o estado do jogo
 
 document.getElementById('start-button').addEventListener('click', function() {
       // Chama a função setup() e esconde o botão
-      setup();
       startGame();
       this.style.display = 'none';
 });
