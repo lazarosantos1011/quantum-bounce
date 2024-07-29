@@ -9,4 +9,5 @@ html, body {
 }
 canvas {
   display: block;
+  border: 3px solid #FFF;
 }
