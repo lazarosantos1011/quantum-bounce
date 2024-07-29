@@ -156,8 +156,8 @@ class Bola {
       let speed = sqrt(this.velocidadeX * this.velocidadeX + this.velocidadeY * this.velocidadeY);
       this.velocidadeX = speed * cos(angle) * (this.velocidadeX > 0 ? -1 : 1);
       this.velocidadeY = speed * sin(angle);
-      this.velocidadeX *= 1.1;
-      this.velocidadeY *= 1.1;
+      this.velocidadeX *= 1.05;
+      this.velocidadeY *= 1.05;
       this.x = raquete.isJogador ? raquete.x + raquete.largura : raquete.x - this.raio;
       this.esmagada = true;
       this.raio = this.raioOriginal / 1.5;
